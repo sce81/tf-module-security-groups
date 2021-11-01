@@ -1,15 +1,15 @@
 variable "sg_rules" {
   description = "map of security group configuration for attaching security group rules to the security group"
   type = list(object({
-    source_sg   = string
-    type        = string
-    description = string
-    from_port   = string
-    to_port     = string
-    cidr_blocks = string
-    protocol    = string
+    source_sg   = optional(string)
+    type        = optional(string)
+    description = optional(string)
+    from_port   = optional(string)
+    to_port     = optional(string)
+    cidr_blocks = optional(string)
+    protocol    = optional(string)
   }))
-  default = []
+  default = [null]
 }
 variable "name"    {}
 variable "env"  {}
